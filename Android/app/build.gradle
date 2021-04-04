@@ -7,11 +7,11 @@ android {
     }
     compileSdkVersion 30
     defaultConfig {
-        applicationId "com.example.samplestickerapp"
-        minSdkVersion 15
+        applicationId "com.littleparrotdevs.stickers"
+        minSdkVersion 23
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         def contentProviderAuthority = applicationId + ".stickercontentprovider"
         // Creates a placeholder property to use in the manifest.
@@ -70,7 +70,7 @@ private void checkApplicationIdInDebug() {
     def ignoreApplicationIdCheck = properties.getProperty('ignoreApplicationIdCheck')
     if (ignoreApplicationIdCheck == null) {
         if (android.defaultConfig.applicationId == "com.example.samplestickerapp") {
-            throw new GradleException("Your applicationId is currently com.example.samplestickerapp, please change your applicationId to a different string in app/build.gradle in line 10")
+            throw new GradleException("Your applicationId is currently com.example.stickers, please change your applicationId to a different string in app/build.gradle in line 10")
         }
     } else {
         println("application id check ignored")
@@ -112,4 +112,5 @@ dependencies {
     implementation "com.facebook.fresco:webpsupport:$fresco_version"
     implementation "com.facebook.fresco:animated-webp:$fresco_version"
     implementation "com.facebook.fresco:animated-base:$fresco_version"
+    implementation 'com.google.android.gms:play-services-ads:19.8.0'
 }
